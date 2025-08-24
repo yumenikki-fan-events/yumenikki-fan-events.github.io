@@ -1,0 +1,193 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+@charset "utf-8";
+
+@font-face {
+	font-family: 美咲ゴシック;
+	src: local(美咲ゴシック), local(MisakiGothic), url(/fonts/misaki_gothic.woff) format("woff");
+}
+
+@font-face {
+	font-family: PixelMplus10;
+	src: local(PixelMplus10), url(/fonts/PixelMplus10-Regular.woff) format("woff");
+}
+
+@font-face {
+	font-family: PixelMplus10;
+	src: local(PixelMplus10), url(/fonts/PixelMplus10-Bold.woff) format("woff");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: PixelMplus12;
+	src: local(PixelMplus12), url(/fonts/PixelMplus12-Regular.woff) format("woff");
+}
+
+@font-face {
+	font-family: PixelMplus12;
+	src: local(PixelMplus12), url(/fonts/PixelMplus12-Bold.woff) format("woff");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: Structr;
+	src: local(Structr), url(/fonts/Structr-Bold.woff) format("woff");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 衡山毛筆フォント;
+	src: local(衡山毛筆フォント), url(/fonts/KouzanMouhituFontOTF.woff) format("woff");
+}
+
+@font-face {
+	font-family: RoundedMplus;
+	src: url(/fonts/rounded-x-mplus-1p-black.woff) format("woff");
+	font-weight: bold;
+}
+
+@viewport {
+	width: 38em;
+}
+
+body {
+	width: 38em;
+	margin-left: auto;
+	margin-right: auto;
+	background: black;
+	color: #CC0000;
+}
+
+body > * {
+	font-size: 0.8125em;
+	font-family: "Courier New", Courier, monospace;
+}
+
+a:link {
+	color: #9999FF;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #666699;
+}
+
+a:hover {
+	color: #CCCC00;
+}
+
+i {
+	font-style: normal;
+}
+i::before {
+	content: "「";
+}
+i::after {
+	content: "」";
+}
+
+kbd::before {
+	content: "【";
+}
+kbd::after {
+	content: "】";
+}
+
+section small {
+	font-size: 1em;
+}
+section small::before {
+	content: "※";
+}
+
+a {
+	white-space: nowrap;
+}
+
+strong {
+	color: lightcoral;
+	font-size: 1.15em;
+}
+
+img {
+	max-width: 100%;
+}
+
+/*====================================
+ * ランキング更新日時
+ */
+
+body > small {
+	display: block;
+	text-align: right;
+}
+
+body > small + section {
+	margin-top: 1em;
+}
+
+/*====================================
+ * ヘッダー
+ */
+body > header {
+	text-align: center;
+}
+
+/*------------------------------------
+ * ページ名
+ */
+body > header > h1 {
+	font-family: 美咲ゴシック, fantasy;
+	color: #FFCFE7;
+	text-shadow: -2px -2px #19000E, 2px -2px #19000E, 2px 2px #19000E, -2px 2px #19000E,
+			 -4px -4px #5C3D5C, 4px -4px #5C3D5C, 4px 4px #5C3D5C, -4px 4px #5C3D5C;
+}
+
+/*====================================
+ * 見出し
+ */
+section h1 {
+	font-size: 1em;
+}
+section h1 a:link,
+section h1 a:visited,
+section h1 a:hover {
+	color: inherit;
+}
+section h1 a::before,
+caption h1::before {
+	content: "★";
+}
+section {
+	margin-top: 4em;
+	margin-bottom: 4em;
+}
+
+/*====================================
+ * フッター
+ */
+body > footer {
+	clear: both;
+}
+body > footer::before {
+	content: "";
+	display: block;
+	border-top: solid medium #222244;
+	margin: 2em auto;
+}
+
+/*------------------------------------
+ * サイト内リンク
+ */
+nav {
+	text-align: center;
+	margin: 2em;
+}
+
+/*------------------------------------
+ * 更新日
+ */
+footer small {
+	clear: both;
+	display: block;
+	text-align: right;
+}

@@ -1,0 +1,173 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+@charset "utf-8";
+
+/*====================================
+ * 参加方法
+ */
+#way figure {
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+}
+
+/*------------------------------------
+ * ミニゲーム別のルール
+ */
+#way section {
+	margin-top: 1.5em;
+	margin-left: 2em;
+}
+#way section:not(:last-of-type) {
+	margin-bottom: 0;
+}
+#way section h1::before {
+	content: "※";
+}
+
+/*====================================
+ * 開催日程
+ */
+#schedule ol {
+	margin-top: 0;
+	padding-left: 0;
+	list-style: none;
+}
+#schedule ol > li {
+	float: left;
+	width: 6.5em;
+	height: 4em;
+	border-bottom: solid #222244;
+}
+#schedule ol > li > time {
+	margin-left: 0.1em;
+}
+#schedule ol::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*------------------------------------
+	年月
+*/
+#schedule figure {
+	width: 45.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+#schedule figcaption {
+	text-align: center;
+	border-bottom: solid #222244;
+	position: relative;
+}
+#schedule .year {
+	position: absolute;
+	bottom: 0;
+	left: 17em;
+}
+#schedule .month {
+	font-size: 2em;
+}
+
+/*------------------------------------
+	開催期間
+*/
+ol > li#first-half,
+ol > li#second-half {
+	height: 10em;
+	line-height: 1.2;
+}
+li ul {
+	list-style: disc;
+	padding-left: 1.5em;
+}
+
+/*------------------------------------
+	前半
+*/
+ol > li#first-half {
+	width: 26em;
+}
+ol > li#first-half,
+.minigames caption {
+	background: #101030;
+}
+
+/*------------------------------------
+	後半
+*/
+ol > li#second-half {
+	width: 19.5em;
+}
+#second-half,
+#second-half + li,
+.minigames:last-of-type caption {
+	background: #2F2F1F;
+}
+#second-half + li > time {
+	display: none;
+}
+
+/*------------------------------------
+	2025-08-01
+*/
+#schedule ol > li:first-of-type {
+	padding-left: 32.5em;
+}
+
+/*------------------------------------
+	曜日
+*/
+#schedule ol > li > time {
+	/* 平日 */
+	color: silver;
+}
+#first-half > time:nth-of-type(1),
+#second-half > time:nth-of-type(2),
+#schedule ol > li:is(:nth-of-type(3), :nth-of-type(7n + 19)) > time {
+	/* 休日 */
+	color: lightsalmon;
+}
+#schedule ol > li:is(:nth-of-type(2), :nth-of-type(9), :nth-of-type(7n + 18)) > time {
+	/* 土曜日 */
+	color: lightskyblue;
+}
+
+/*------------------------------------
+	2025-08-31
+*/
+#schedule ol > li:last-of-type {
+	width: auto;
+	height: auto;
+	border: none;
+	position: relative;
+	top: -1.5em;
+	left: 5.3em;
+}
+
+/*====================================
+ * 運営
+ */
+footer dl {
+	width: 23em;
+	margin-left: auto;
+	line-height: 1.6em;
+}
+footer dt {
+	width: 8em;
+	float: left;
+	clear: both;
+}
+footer dd {
+	width: 15em;
+	margin: 0;
+	float: left;
+}
+#video-creators {
+	height: 4.8em;
+}
+#video-creators + dd,
+dd + dd {
+	width: auto;
+	margin-right: 1em;
+}

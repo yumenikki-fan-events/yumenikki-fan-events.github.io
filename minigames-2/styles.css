@@ -1,0 +1,659 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+@charset "utf-8";
+
+/*====================================
+ * 企画名
+ */
+#project-name {
+	font-size: 3.5em;
+	margin-top: 0;
+}
+#project-name span:nth-of-type(1) {
+	font-size: 0.5em;
+}
+#project-name span:nth-of-type(2) {
+	color: khaki;
+}
+#project-name span:nth-of-type(3) {
+	color: crimson;
+}
+#project-name span:nth-of-type(4) {
+	color: paleturquoise;
+}
+
+/*====================================
+ * 各ミニゲーム共通
+ */
+main {
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+main section,
+main table {
+	display: contents;
+}
+.minigames table > *,
+.minigames tr,
+.minigames tr > * {
+	display: block;
+}
+.minigames thead {
+	display: none;
+}
+.minigames caption,
+.minigames tbody {
+	width: 15em;
+	height: 18em;
+	margin: 0.2em;
+	box-sizing: border-box;
+	padding: 0.5em;
+}
+
+/*------------------------------------
+ * ミニゲーム
+ */
+.minigames tbody {
+	border: solid;
+}
+
+/*------------------------------------
+ * ゲーム名・ミニゲーム名
+ */
+.minigames th {
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* ミニゲーム名 */
+	text-align: right;
+}
+.minigames th a::before,
+.minigames th a::after {
+	content: "〜";
+}
+
+/*------------------------------------
+ * ミニゲーム名
+ */
+.minigames th > b {
+	display: block;
+	font-weight: inherit;
+	text-align: center;
+	font-size: 2em;
+	height: 1.2em;
+	box-sizing: border-box;
+}
+
+/*------------------------------------
+ * ゲーム名
+ */
+.minigames th a {
+	margin-right: 0.5em;
+}
+.minigames th a::before,
+.minigames th a::after {
+	content: "〜";
+}
+
+/*====================================
+ * 順位・名前・得点
+ *
+ * 参考: CSS3のグラデーションで金属や木目などを表現する | Webクリエイターのメモ帳 <http://cre8or.jp/web-design-tips/201>
+ */
+.minigames td {
+	font-family: PixelMplus12, fantasy;
+}
+.minigames tr {
+	clear: both;
+}
+.minigames td {
+	float: left;
+	width: auto;
+}
+
+/*------------------------------------
+ * 名前・得点
+ */
+.minigames tbody td:nth-of-type(n+2) {
+	width: 10em;
+	text-align: center;
+}
+
+/*------------------------------------
+ * 名前
+ */
+.minigames td:nth-of-type(2) {
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+	transform-origin: left;
+}
+
+.minigames td a:link,
+.minigames td a:visited {
+	color: inherit;
+	text-decoration: underline;
+}
+.minigames td a:hover {
+	position: relative;
+	top: 0.1em;
+	left: 0.1em;
+}
+
+/*------------------------------------
+ * 順位
+ */
+.minigames td:nth-of-type(1) {
+	border-style: solid;
+	border-width: 1px;
+	font-size: 3em;
+	line-height: 0.9em;
+	width: 1em;
+	height: 1em;
+	border-radius: 0.15em;
+	margin: 0.1em 0.1em 0.1em 0;
+	font-family: PixelMplus12, fantasy;
+	box-sizing: border-box;
+	text-shadow: -1px -1px rgba(0, 0, 0, 0.34), 1px 1px rgba(240, 240, 204, 0.9);
+}
+
+/*------------------------------------
+ * 得点
+ */
+.minigames td:nth-of-type(3) {
+	width: 5em;
+	text-align: right;
+}
+.minigames td:nth-of-type(3)::before,
+.minigames td:nth-of-type(3)::after {
+	content: "★";
+	font-family: 美咲ゴシック, fantasy;
+	margin: 0.1em;
+}
+
+/*------------------------------------
+ * 1位
+ */
+.minigames tr:nth-of-type(2) {
+	color: #BBBB99;
+}
+.minigames tr:nth-of-type(2) td:nth-of-type(1) {
+	/* 順位 */
+	border-color: #DECA73;
+	box-shadow:
+		2px 2px 0.5em rgba(255, 220, 150, 0.55),
+		inset 1px 1px 0 rgba(200, 200, 160, 0.9),
+		inset -1px -1px 0 rgba(0, 0, 0, 0.34);
+	background: linear-gradient(
+		-72deg,
+		#EECC33,
+		#DDDDAA 16%,
+		#EECC33 21%,
+		#DDDDAA 24%,
+		#886633 27%,
+		#EECC33 36%,
+		#DDDDAA 45%,
+		#DDDDAA 60%,
+		#EECC33 72%,
+		#DDDDAA 80%,
+		#EECC33 84%,
+		#452100);
+	padding-left: 0.3em;
+}
+.minigames tr:nth-of-type(2) td:nth-of-type(2) {
+	/* 名前 */
+	text-shadow: -1px -1px #DDDDBB, 1px 1px #645A00;
+}
+
+/*------------------------------------
+ * 2位
+ */
+.minigames tr:nth-of-type(3) {
+	color: #BBBBBB;
+}
+.minigames tr:nth-of-type(3) td:nth-of-type(1) {
+	/* 順位 */
+	border-color: #CCCCCC;
+	box-shadow:
+		2px 2px 0.5em rgba(122, 122, 122, 0.55),
+		inset 1px 1px 0 rgba(200, 200, 200, 0.9),
+		inset -1px -1px 0 rgba(0, 0, 0, 0.34);
+	background: linear-gradient(
+		-72deg,
+		#CCCCCC,
+		#DDDDDD 16%,
+		#CCCCCC 21%,
+		#DDDDDD 24%,
+		#888888 27%,
+		#CCCCCC 36%,
+		#DDDDDD 45%,
+		#DDDDDD 60%,
+		#CCCCCC 72%,
+		#DDDDDD 80%,
+		#CCCCCC 84%,
+		#A1A1A1);
+	padding-left: 0.27em;
+}
+.minigames tr:nth-of-type(3) td:nth-of-type(2) {
+	/* 名前 */
+	text-shadow: -1px -1px #CCCCCC, 1px 1px #555555;
+}
+
+/*------------------------------------
+ * 3位
+ */
+.minigames tr:nth-of-type(n+4) {
+	color: #BBAA88;
+}
+.minigames tr:nth-of-type(n+4) td:nth-of-type(1) {
+	/* 順位 */
+	border-color: #DEA173;
+	box-shadow:
+		2px 2px 0.5em rgba(122, 55, 34, 0.55),
+		inset 1px 1px 0 rgba(200, 180, 160, 0.9),
+		inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+	background: linear-gradient(
+		-72deg,
+		#CA7345,
+		#DDCCBB 16%,
+		#CA7345 21%,
+		#DDCCBB 24%,
+		#A14521 27%,
+		#CA7345 36%,
+		#DDCCBB 45%,
+		#DDCCBB 60%,
+		#CA7345 72%,
+		#DDCCBB 80%,
+		#CA7345 84%,
+		#732100);
+	padding-left: 0.27em;
+}
+.minigames tr:nth-of-type(n+4) td:nth-of-type(2) {
+	/* 名前 */
+	text-shadow: -1px -1px #CCBBAA, 1px 1px #775522;
+}
+
+/*------------------------------------
+ * 未登録
+ */
+.minigames tbody tr:has(td:empty) {
+	opacity: 0.3;
+}
+.minigames tbody tr:has(td:empty) td:nth-of-type(2)::before {
+	content: "――――";
+}
+.minigames tbody tr:has(td:empty) td:nth-of-type(3)::before {
+	content: "――" !important;
+	position: static !important;
+}
+.minigames tbody tr:has(td:empty) td:nth-of-type(3)::after {
+	display: none;
+}
+
+/*====================================
+ * 前半・後半
+ */
+.minigames caption {
+	text-align: left;
+}
+.minigames caption time > div {
+	text-align: right;
+}
+.minigames:not(:first-of-type) caption {
+	grid-column: span 3;
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+}
+.minigames:not(:first-of-type) caption h1 {
+	margin-right: 1em;
+}
+
+/*====================================
+ * NASU
+ */
+#nasu {
+	border-color: #84454A;
+	box-shadow: 0 -1px #B57184, 1px 0 #4A0C31, 0 1px #4A0C31, -1px 0 #4A0C31,	/* 外側の上・右・下・左 */
+			-1px -1px #535653, 0 0 0 1px #535653,	/* 外側の四隅 */
+			inset 1px 1px #4A0C31, inset -1px -1px #523C42;	/* 内側の上左・下右 */
+}
+#nasu th b {
+	font-family: Structr, sans-serif;
+	color: #732073;
+	text-shadow: -1px -1px #9C59AD, 1px -1px #9C59AD, 1px 1px #9C59AD, -1px 1px #9C59AD;
+	font-weight: bold;
+}
+
+/*====================================
+ * SHINSOKU NEKO
+ */
+#shinsoku-neko {
+	border-color: #FF8629;
+	box-shadow: 0 -1px #FFBA52, 1px 0 #BD5529, 0 1px #BD5529, -1px 0 #BD5529,
+			inset 1px 1px #BD5529, inset -1px -1px #8C4931,
+			inset 0 0 0 2px #4A1C00;
+}
+#shinsoku-neko th b {
+	font-family: Structr, sans-serif;
+	color: #733C18;
+	text-shadow: -1px -1px #84754A, 1px -1px #84754A, 1px 1px #84754A, -1px 1px #84754A;
+}
+#shinsoku-neko th b span {
+	font-size: 0.4em;
+	text-shadow: none;
+}
+#shinsoku-neko th b span:nth-of-type(1) {
+	position: relative;
+	top: -0.8em;
+	left: 1em;
+}
+#shinsoku-neko td:nth-of-type(3)::before,
+#shinsoku-neko td:nth-of-type(3)::after {
+	content: "．";
+}
+#shinsoku-neko td:nth-of-type(3)::before {
+	position: relative;
+	left: 0.65em;
+}
+
+/*====================================
+ * TA_BE_
+ */
+#ta-be {
+	border-color: #CEB652;
+}
+#ta-be th b {
+	font-family: sans-serif;
+	color: #A52400;
+	font-weight: bold;
+}
+#ta-be td:nth-of-type(3)::before,
+#ta-be td:nth-of-type(3)::after {
+	content: "．";
+	position: relative;
+	top: -0.2em;
+	left: 0.5em;
+}
+#ta-be td:nth-of-type(3)::after {
+	visibility: hidden;
+}
+
+/*====================================
+ * SOUL
+ */
+#soul {
+	border-color: #008040;
+	box-shadow: 0 -1px #14A868, 1px 0 #008040, 0 1px #008040, -1px 0 #14A868,	/* 外側の上・右・下・左 */
+			-1px -1px #14A868, 0 0 0 1px #008040,	/* 外側の四隅 */
+			inset 1px 1px #006222, inset -1px -1px #14A868;	/* 内側の上左・下右 */
+}
+#soul th b {
+	font-family: Structr, sans-serif;
+	color: #008040;
+	text-shadow: -1px -1px #14a868, 1px -1px #14a868, 1px 1px #006222, -1px 1px #006222;
+	font-weight: bold;
+}
+#soul td:nth-of-type(3)::before,
+#soul td:nth-of-type(3)::after {
+	content: "☆";
+}
+
+/*====================================
+ * Ex.Ebi
+ */
+#ex-ebi {
+	border-color: #050505;
+	box-shadow: 0 -1px #FFFFFF, 1px 0 #FFFFFF, 0 1px #FFFFFF, -1px 0 #FFFFFF,	/* 外側の上・右・下・左 */
+			-1px -1px #FFFFFF, 0 0 0 1px #FFFFFF,	/* 外側の四隅 */
+			inset 1px 1px #FFFFFF, inset -1px -1px #FFFFFF;	/* 内側の上左・下右 */
+}
+#ex-ebi th b {
+	font-family: RoundedMplus, sans-serif;
+	color: #0401FF;
+	font-weight: bold;
+}
+#ex-ebi th b  span {
+	color: #FE0000;
+}
+#ex-ebi td:nth-of-type(3)::before,
+#ex-ebi td:nth-of-type(3)::after {
+	content: "";
+}
+
+/*====================================
+ * パイロン走
+ */
+#pylon-runs {
+	border-color: #314931;
+	box-shadow: -1px 0 #426942, -1px -1px #426942, 0 -1px #426942, /* 外側の左と上 */
+			1px 0 #182818, 1px 1px #182818, 0 1px #182818,  /* 外側の右と下 */
+			0 0 0 1px #314931,	/* 外側の右上角と左下角 */
+			0 0 0 2px #101410,	/* 外側の外側 */
+			inset 1px 1px #182818, inset -1px -1px #426942;	/* 内側 */
+}
+#pylon-runs th b {
+	font-family: serif;
+	color: #B52829;
+	text-shadow: -1px -1px silver, 1px -1px silver, 1px 1px silver, -1px 1px silver;
+	font-weight: bold;
+	letter-spacing: -0.2em;
+	position: relative;
+	top: -0.2em;
+}
+#pylon-runs th b span {
+	position: relative;
+}
+#pylon-runs th b span:nth-of-type(2) {
+	top: -0.27em;
+}
+#pylon-runs th b span:nth-of-type(3) {
+	left: -0.1em;
+}
+#pylon-runs th b span:nth-of-type(4) {
+	top: -0.27em;
+}
+#pylon-runs th b span:nth-of-type(5) {
+	font-family: 衡山毛筆フォント, cursive;
+	font-size: 1.3em;
+	color: #414950;
+	top: 0.2em;
+	left: -0.3em;
+}
+#pylon-runs td:nth-of-type(3)::before,
+#pylon-runs td:nth-of-type(3)::after {
+	content: "☆";
+}
+
+/*====================================
+ * Limit reflection
+ */
+#limit-reflection {
+	border-color: #ECECEC;
+	box-shadow: 0 -1px blue, 1px 0 blue, 0 1px blue, -1px 0 blue,	/* 外側の上・右・下・左 */
+			-1px -1px blue, 0 0 0 1px blue,	/* 外側の四隅 */
+			inset 1px 1px blue, inset -1px -1px blue;	/* 内側の上左・下右 */
+}
+#limit-reflection th b {
+	font-family: sans-serif;
+	color: #ECECEC;
+	text-shadow: -1px -1px blue, 1px -1px blue, 1px 1px blue, -1px 1px blue;
+	font-weight: bold;
+	letter-spacing: -0.05em;
+}
+#limit-reflection td:nth-of-type(3)::before,
+#limit-reflection td:nth-of-type(3)::after {
+	content: "*";
+	position: relative;
+	top: 0.3em;
+}
+
+/*====================================
+ * HOZO
+ */
+#hozo {
+	border-color: #1B1B5E;
+	border-radius: 1em;
+}
+#hozo th b {
+	font-family: RoundedMplus, sans-serif;
+	font-weight: bold;
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: center;
+	line-height: 0.5;
+	flex-direction: column;
+}
+#hozo th b span {
+	overflow: hidden;
+	border-radius: 50%;
+}
+#hozo th b span:nth-of-type(1) {
+	color: #91EEFF;
+	-webkit-text-stroke-width: 0.1em;
+	transform: rotate(30deg);
+}
+#hozo th b span:nth-of-type(2) {
+	color: #FF70FF;
+	-webkit-text-stroke-width: 0.1em;
+}
+#hozo th b span:nth-of-type(3) {
+	color: #AD62FF;
+	-webkit-text-stroke-width: 0.2em;
+	line-height: 0.6;
+}
+#hozo th b span:nth-of-type(4) {
+	color: #FFFFFF;
+	-webkit-text-stroke-width: 0.1em;
+}
+
+/*====================================
+ * NIFU
+ */
+#nifu {
+	border-color: #222222;
+	box-shadow: inset 1px 1px #484848, inset -1px -1px #484848;	/* 内側の上左・下右 */
+}
+#nifu th b {
+	font-family: Structr, sans-serif;
+	color: #C84A10;
+	text-shadow: -1px -1px #FBA04F, 1px -1px #FBA04F, 1px 1px #9A0600, -1px 1px #9A0600;
+	font-weight: bold;
+}
+#nifu td:nth-of-type(3)::before,
+#nifu td:nth-of-type(3)::after {
+	content: "卍";
+}
+
+/*====================================
+ * metronom
+ */
+#metronom {
+	border-color: #393029;
+}
+#metronom th b {
+	font-family: RoundedMplus, sans-serif;
+	color: #525131;
+	text-shadow: -1px -1px #212010, 1px -1px #212010, 1px 1px #212010, -1px 1px #212010;
+	font-weight: bold;
+	letter-spacing: -0.1em;
+}
+#metronom td:nth-of-type(3)::before,
+#metronom td:nth-of-type(3)::after {
+	content: "＃";
+}
+
+/*====================================
+ * きのこ狩り
+ */
+#kinokogari {
+	border-color: #31B231;
+}
+#kinokogari th b {
+	font-family: 衡山毛筆フォント, serif;
+	color: #BDDFFF;
+	text-shadow: -1px -1px #727172, 1px -1px #727172, 1px 1px 0 #727172, -1px 1px #727172;
+}
+
+/*====================================
+ * Cartoon Boy
+ */
+#cartoon-boy {
+	border-color: #9B2728;
+	box-shadow: inset 1px 1px #7C211C, inset -1px -1px #7C211C;	/* 内側の上左・下右 */
+}
+#cartoon-boy th b {
+	font-family: sans-serif;
+	text-transform: uppercase;
+}
+#cartoon-boy th b span {
+	background: #F8F2E2;
+	font-size: 0.8em;
+	display: inline-block;
+}
+#cartoon-boy th b span:nth-of-type(1) {
+	color: #AE7EA4;
+	transform: scale(0.9, 1.1) skew(-10deg, 0deg);
+}
+#cartoon-boy th b span:nth-of-type(2) {
+	color: #DAD66A;
+	transform: rotate(-10deg) scale(0.9, 1.1) skew(-10deg, 0deg);
+}
+#cartoon-boy th b span:nth-of-type(3) {
+	color: #A64151;
+	transform: rotate(5deg) scale(0.7, 1.5) skew(-10deg, 0deg);
+}
+#cartoon-boy th b span:nth-of-type(4) {
+	color: #66A6BF;
+	transform: rotate(10deg) skew(-10deg, -20deg);
+}
+#cartoon-boy th b span:nth-of-type(5) {
+	color: #7DC883;
+	transform: rotate(-10deg) scale(0.9, 1.1) skew(0deg, -20deg);
+}
+#cartoon-boy th b span:nth-of-type(6) {
+	color: #7C728A;
+	transform: rotate(10deg) scale(0.9, 1.1);
+}
+#cartoon-boy th b span:nth-of-type(7) {
+	color: #D39C63;
+	transform: scale(1.5, 1) skew(0deg, -10deg);
+}
+#cartoon-boy th b span:nth-of-type(8) {
+	color: #D87DCA;
+	transform: rotate(-10deg) scale(0.9, 1.1);
+}
+#cartoon-boy th b span:nth-of-type(9) {
+	color: #99D8DF;
+	transform: scale(0.9, 1.1) skew(10deg, 0deg);
+}
+#cartoon-boy th b span:nth-of-type(10) {
+	color: #B5A281;
+	transform: rotate(20deg) skew(-10deg, -20deg);
+	text-transform: initial;
+}
+#cartoon-boy td:nth-of-type(3)::before,
+#cartoon-boy td:nth-of-type(3)::after {
+	content: "";
+}
+
+/*====================================
+ * GRAVITY
+ */
+#gravity {
+	border-color: #F77FFB;
+	box-shadow: 0 -1px #4CD3F0, 1px 0 #4CD3F0, 0 1px #4CD3F0, -1px 0 #4CD3F0,	/* 外側の上・右・下・左 */
+			-1px -1px #4CD3F0, 0 0 0 1px #4CD3F0,	/* 外側の四隅 */
+			inset 1px 1px #4CD3F0, inset -1px -1px #4CD3F0;	/* 内側の上左・下右 */
+}
+#gravity th b {
+	font-family: PixelMplus10, sans-serif;
+	color: #FFFFFF;
+	text-shadow: -2px -2px #8DF9FB, 2px 2px #FA8FFF;
+	font-weight: bold;
+}
+#gravity td:nth-of-type(3)::before,
+#gravity td:nth-of-type(3)::after {
+	content: "";
+}
